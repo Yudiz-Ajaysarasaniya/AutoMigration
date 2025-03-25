@@ -1,0 +1,6 @@
+@AutoMigration_HostAddress = http://localhost:5240
+
+GET {{AutoMigration_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
