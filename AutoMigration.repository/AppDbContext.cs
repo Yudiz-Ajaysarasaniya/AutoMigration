@@ -18,6 +18,7 @@ namespace AutoMigration.repository
 
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<UserAccessTokenEntity> UserAccessToken { get; set; }
+        public DbSet<ConsumerEntity> Consumers { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
