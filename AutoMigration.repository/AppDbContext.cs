@@ -1,5 +1,6 @@
 ﻿using AutoMigration.models.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,12 @@ namespace AutoMigration.repository
 
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<UserAccessTokenEntity> UserAccessToken { get; set; }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.ConfigureWarnings(warnings =>
+                warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+        }
     }
 }
